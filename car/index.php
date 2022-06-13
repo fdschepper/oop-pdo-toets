@@ -9,12 +9,7 @@ $result = $db->query('SELECT `merk`, `model`, `topsnelheid`, `prijs` FROM `car`'
 ?>
 <table>
   <tr>
-    <th>Merk</th>
-    <th>Model</th>
-    <th>Topsnelheid</th>
-    <th>Prijs</th>
-  </tr>
-  <tr>
+    <td><strong>Merk</strong></td>
         <?php
             foreach($db->resultSet() as $place)
             {
@@ -23,29 +18,31 @@ $result = $db->query('SELECT `merk`, `model`, `topsnelheid`, `prijs` FROM `car`'
         ?>
   </tr>
   <tr>
-    <td>Centro comercial Moctezuma</td>
-    <td>Francisco Chang</td>
-    <td>Mexico</td>
+  <td><strong>Model</strong></td>
+  <?php
+            foreach($db->resultSet() as $place)
+            {
+                echo "<td>" . $place->model . "</td>";
+            }      
+        ?>
   </tr>
   <tr>
-    <td>Ernst Handel</td>
-    <td>Roland Mendel</td>
-    <td>Austria</td>
+  <td><strong>Topsnelheid</strong></td>
+  <?php
+            foreach($db->resultSet() as $place)
+            {
+                echo "<td>" . $place->topsnelheid . "</td>";
+            }      
+        ?>
   </tr>
   <tr>
-    <td>Island Trading</td>
-    <td>Helen Bennett</td>
-    <td>UK</td>
-  </tr>
-  <tr>
-    <td>Laughing Bacchus Winecellars</td>
-    <td>Yoshi Tannamuri</td>
-    <td>Canada</td>
-  </tr>
-  <tr>
-    <td>Magazzini Alimentari Riuniti</td>
-    <td>Giovanni Rovelli</td>
-    <td>Italy</td>
+  <td><strong>Prijs</strong></td>
+  <?php
+            foreach($db->resultSet() as $place)
+            {
+                echo "<td>" . $place->prijs . "</td>";
+            }      
+        ?>
   </tr>
 </table>
 
